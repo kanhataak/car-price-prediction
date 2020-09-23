@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:#fff">
+    <div class="car-form">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>PRICE PREDICTION</h2>
+            
+            <p>Model Year</p>
+            <input id="first" name="Year" type="number " required="required">
+            
+            <p>Showroom Price?(In lakhs)</p>
+            <input id="second" name="Present_Price" required="required">
+            
+            <p>How Many Kilometers Drived?</p>
+            <input id="third" name="Kms_Driven" required="required">
+            
+            <p>Owners previously had the car(0 or 1 or 3) ?</p>
+            <input id="fourth" name="Owner" required="required">
+            
+            <p>Fuel Type?</p>
+            <select name="Fuel_Type_Petrol" id="fuel" required="required">
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="CNG">CNG</option>
+            </select>
+            
+            <p>Dealer or Individual</p>
+            <select name="Seller_Type_Individual" id="resea" required="required">
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select>
+            
+            <p>Transmission</p>
+            <select name="Transmission_Mannual" id="research" required="required">
+                <option value="Mannual">Manual Car</option>
+                <option value="Automatic">Automatic Car</option>
+            </select>
+            <br><button id="sub" type="submit ">Calculate Price</button>
+
+        </form>
+        <p>{{ prediction_text }}<p>
+    </div>
+
+
+
+
+    <style>
+        body {
+            background: url("img/car_bg.jpeg");
+            background-size: cover;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .car-form{
+            position: absolute;
+            left:50%;
+            width:400px;
+            hight:600px;
+            padding: 0px 10px;
+            background: rgba(0,0,0,0.4);
+            }
+        .car-form p{
+            margin: 29px 0 0 0;
+            padding:0;
+            font-weight:bold;
+            }
+            
+        #research {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+        }
+        
+
+        
+        #fuel {
+            width: 255px;
+            height: 30px;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+        
+        #fuel:hover {
+            background-color: #395cc6;
+        }
+        
+        #research {
+            width: 255px;
+            height: 30px;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+        
+        #research:hover {
+            background-color: #395cc6;
+        }
+        
+        #resea {
+            width: 255px;
+            height: 30px;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+        
+        #resea:hover {
+            background-color: #395cc6;
+        }
+        
+        #sub {
+            margin-top:10px;
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 15px;
+            background-color: #0040ff;
+            color:#fff;
+        }
+        
+        
+        #first {
+            border-radius: 10px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #second {
+            border-radius: 10px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #third {
+            border-radius: 10px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #fourth {
+            border-radius: 10px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+    </div>
+</body>
+
+</html>
