@@ -12,7 +12,7 @@
     <div style="color:#fff">
     <div class="car-form">
         <form action="{{ url_for('predict')}}" method="post">
-            <h2>PRICE PREDICTION</h2>
+            <h2>CAR PRICE PREDICTION</h2>
             
             <p>Model Year</p>
             <input id="first" name="Year" type="number " required="required">
@@ -48,6 +48,7 @@
 
         </form>
         <p>{{ prediction_text }}<p>
+        <p>Developed by Kanhaiya</p>
     </div>
 
 
@@ -55,7 +56,7 @@
 
     <style>
         body {
-            background: url("img/car_bg.jpeg");
+            background: url("/static/img/car_bg.jpeg");
             background-size: cover;
             text-align: center;
             margin: 0;
@@ -65,8 +66,14 @@
         .car-form{
             position: absolute;
             left:50%;
+	        top:50%;
             width:400px;
             hight:600px;
+	        -webkit-transform: translate(-50%,-50%);
+	        -moz-transform: translate(-50%,-50%);
+	        -ms-transform: translate(-50%,-50%);
+	        -o-transform: translate(-50%,-50%);
+	        transform: translate(-50%,-50%);
             padding: 0px 10px;
             background: rgba(0,0,0,0.4);
             }
